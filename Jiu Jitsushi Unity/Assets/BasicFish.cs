@@ -14,39 +14,69 @@ using UnityEngine;
 
 public class BasicFish : MonoBehaviour
 {
+    public float maxSpeed = 1f;
     public float speed = 1f;
     public float leftAndrightEdge = 10f;
     public float chanceToChangeDirections = 0.01f;
+    private bool turningRight = false;
+    private bool turningLeft = false;
 
     private void Start()
     {
         Debug.Log("Started");
     }
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
+        if(turning == true)
+        {
+
+            return;
+        }
         //Fish moves every frame
-        Vector3 pos = transform.position;
-        pos.x += speed * Time.deltaTime;
-        transform.position = pos;
+        
         if (pos.x < -leftAndrightEdge || pos.x > leftAndrightEdge)
         {
             Invoke("ChangeDirection", 0f);
         }
 
-    }//end Update()
+    }//end Update()*/
 
     private void FixedUpdate()
     {
+<<<<<<< Updated upstream:Jiu Jitsushi Unity/Assets/BasicFish.cs
         Debug.Log("Tried");
         if (Random.value < chanceToChangeDirections)
+=======
+        if(turningLeft == true)
+>>>>>>> Stashed changes:Jiu Jitsushi Unity/Assets/Scripts/BasicFish.cs
         {
-            Invoke("ChangeDirection", 0f);
+            speed -= .01f * maxSpeed;
+            if(speed <= -maxSpeed)
+            {
+                speed = -maxSpeed;
+                turningLeft = false;
+            }
         }
-    }
-
-    private void ChangeDirection()
-    {
-        speed *= -1;
+        if (turningRight == true)
+        {
+            speed += .01f * maxSpeed;
+            if (speed >= maxSpeed)
+            {
+                speed = maxSpeed;
+                turningRight = false;
+            }
+        }
+        Vector3 pos = transform.position;
+        pos.x += speed * Time.deltaTime;
+        transform.position = pos;
+        if (pos.x > leftAndrightEdge)
+        {
+            turningLeft = true;
+        }
+        if (pos.x < -leftAndrightEdge)
+        {
+            turningRight = true;
+        }
     }
 }
