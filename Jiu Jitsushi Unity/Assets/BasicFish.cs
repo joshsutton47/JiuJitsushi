@@ -23,7 +23,7 @@ public class BasicFish : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Started");
+    
     }
     // Update is called once per frame
     /*void Update()
@@ -44,12 +44,8 @@ public class BasicFish : MonoBehaviour
 
     private void FixedUpdate()
     {
-<<<<<<< Updated upstream:Jiu Jitsushi Unity/Assets/BasicFish.cs
-        Debug.Log("Tried");
         if (Random.value < chanceToChangeDirections)
-=======
         if(turningLeft == true)
->>>>>>> Stashed changes:Jiu Jitsushi Unity/Assets/Scripts/BasicFish.cs
         {
             speed -= .01f * maxSpeed;
             if(speed <= -maxSpeed)
