@@ -22,6 +22,7 @@ public class BoatManager : MonoBehaviour
 
     [Header("Set in Inspector")]
     public GameObject[] harpoonPrefabs;
+    public GameObject harpoonPrefab;
     private Vector3 initialVelocity;
 
     [Header("Set Dynamically")]
@@ -52,9 +53,16 @@ public class BoatManager : MonoBehaviour
         pos.x += xAxis * speed * Time.deltaTime;
         transform.position = pos;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        // detects whether the mouse is clicking
+        if (Input.GetMouseButtonDown(0))
         {
-            FireProjectile();
+            mousePress = true;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            mousePress = false;
+            boatShoot();
         }
 
     }
@@ -73,19 +81,10 @@ public class BoatManager : MonoBehaviour
         }*/
 
 
-        // detects whether the mouse is clicking
-        if (Input.GetMouseButtonDown(0))
-        {
-            mousePress = true;
-        }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            mousePress = false;
-            boatShoot();
-        }
 
-        // translates the mouse position to 2D and makes the cannon follow the x and y direction
+        // translates the mouse position to 2D and makes the boat follow the x and y direction (maybe use this for person on boat or something later)
+        /***
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = cam.ScreenToWorldPoint(mousePosition);
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x,
@@ -93,15 +92,18 @@ public class BoatManager : MonoBehaviour
 
         initialVelocity = direction;
         transform.up = direction;
-        
+        ***/
+
     }
 
     private void boatShoot()
     {
+
         // Fires projectile, with additional force depending on the
-        // distance of the mouse from the cannon
+        // distance of the mouse from the boat
         firePoint = this.transform;
-        GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint.position, gameObject.transform.rotation);
+        //GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint.position, gameObject.transform.rotation);
+        GameObject harpoon = Instantiate(harpoonPrefab, firePoint.position, gameObject.transform.rotation);
 
         Rigidbody rb = harpoon.GetComponent<Rigidbody>();
         rb.AddForce(initialVelocity, ForceMode.Impulse);
