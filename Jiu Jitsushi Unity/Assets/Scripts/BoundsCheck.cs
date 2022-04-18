@@ -2,8 +2,8 @@
  * Created by: Akram Taghavi-Burris
  * Date Created: March 16, 2022
  * 
- * Last Edited by: April 5, 2022
- * Last Edited: Jeremiah Underwood
+ * Last Edited by: Jeremiah Underwood
+ * Last Edited: April 18, 2022
  * 
  * Description: Checks if object is in bounds of camera
 ****/

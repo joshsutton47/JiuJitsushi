@@ -38,7 +38,7 @@ public class BasicFish : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("Tried");
+        //Debug.Log("Tried");
         if (Random.value < chanceToChangeDirections)
         {
             Invoke("ChangeDirection", 0f);
