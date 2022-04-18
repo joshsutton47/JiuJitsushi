@@ -14,9 +14,14 @@ using UnityEngine;
 
 public class HarpoonManager : MonoBehaviour
 {
+    [Header("Set in Inspector")]
+    public GameObject boat;
+
     [Header("Movement")]
     public float speed = 10;
 
+    //private Vector3 boatLocation;
+    //public float easing = 0.05f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,5 +39,18 @@ public class HarpoonManager : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x += xAxis * speed * Time.deltaTime;
         transform.position = pos;
+
+        // Fragments of moving the harpoon back to the boat
+        /*if(Input.GetKeyDown(KeyCode.Space)){
+            if(boat != null)
+            {
+                Debug.Log("space pressed");
+                boatLocation = Vector3.Lerp(transform.position, boatLocation, easing);
+                this.gameObject.transform.position = boatLocation;
+
+            }
+        }*/
     }
+
+    
 }
