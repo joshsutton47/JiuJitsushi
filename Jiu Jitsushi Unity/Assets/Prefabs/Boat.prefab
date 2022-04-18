@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9103793544196139398}
   - component: {fileID: 9103793544196139399}
   - component: {fileID: 9103793544196139396}
+  - component: {fileID: 858787271}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -112,3 +113,24 @@ MonoBehaviour:
   speed: 10
   projectilePrefab: {fileID: 0}
   projectileSpeed: 0
+  harpoonPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+--- !u!114 &858787271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103793544196139397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e328ed85ad6aa43899d0f9f23a2fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  keepOnScreen: 1
+  isOnScreen: 1
+  offLeft: 0
+  offRight: 0
+  camWidth: 0
+  camHeight: 0
