@@ -2,8 +2,8 @@
  * Created by: Akram Taghavi-Burris
  * Date Created: March 16, 2022
  * 
- * Last Edited by: April 5, 2022
- * Last Edited: Thomas Nguyen
+ * Last Edited by: Jeremiah Underwood
+ * Last Edited: April 18, 2022
  * 
  * Description: Checks if object is in bounds of camera
 ****/
@@ -23,7 +23,7 @@ public class BoundsCheck : MonoBehaviour
     [HideInInspector]
     public bool isOnScreen = true; //is the object on screen 
     [HideInInspector]
-    public bool offLeft, offRight, offUp, offDown; //checks for where the object is off screen
+    public bool offLeft, offRight; //checks for where the object is off screen
     [HideInInspector]
     public float camWidth; //gets the width of the camera
     [HideInInspector]
@@ -61,27 +61,15 @@ public class BoundsCheck : MonoBehaviour
             offLeft = true;
         }
 
-        //Top bound check
-        if (pos.y > camHeight - radius) 
-        {   pos.y = camHeight - radius;
-            offUp = true;
-        }
-
-        //Bottom bound check
-        if (pos.y < -camHeight + radius) 
-        {   pos.y = -camHeight + radius;
-            offDown = true;
-        }
-
         //is the object on screen, depends if any one of the off bools are true, there by making isOnScreen false
-        isOnScreen = !(offRight || offLeft || offUp || offDown);
+        isOnScreen = !(offRight || offLeft);
 
         //if the object is to stay on screen but has moved off screen, move it back
         if(keepOnScreen && !isOnScreen)
         {
             transform.position = pos;
             isOnScreen = true;
-            offRight = offLeft = offUp = offDown = false; // reset the off bools to false, when object is meant to stay on screen
+            offRight = offLeft = false; // reset the off bools to false, when object is meant to stay on screen
         }
 
     }//end LateUpdate
@@ -90,7 +78,7 @@ public class BoundsCheck : MonoBehaviour
     //Draw the bounds in the scene pane
     private void OnDrawGizmos()
     {
-        if (!Application.isPlaying) return; //when the editor is not in playmode exit
+        //if (Application.isPlaying) return; //when the editor is not in playmode exit
 
         Vector3 boundSize = new Vector3(camWidth * 2, camHeight * 2, 0.1f); //set the boundary size
         Gizmos.color = Color.yellow; //sets draw color to yellow
