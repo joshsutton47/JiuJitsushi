@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -505,57 +505,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3487813884214249805, guid: 6288241e769131c47848e3fe364a4b45, type: 3}
   m_PrefabInstance: {fileID: 497108877}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &2006954202
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006954201}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0.2
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &2006954203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006954201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e328ed85ad6aa43899d0f9f23a2fbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 0
-  keepOnScreen: 1
-  isOnScreen: 1
-  offLeft: 0
-  offRight: 0
-  camWidth: 0
-  camHeight: 0
---- !u!114 &2006954204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006954201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82979298e022bd84482a0ec5d9b30572, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.3
-  accel: 5
-  snapSpeed: 7
-  rotationMult: 40
 --- !u!1001 &2254184225794704876
 PrefabInstance:
   m_ObjectHideFlags: 0
