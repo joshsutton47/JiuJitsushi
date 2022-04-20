@@ -3,7 +3,12 @@ guid: 4ff12e60793f4254a9e0ab112c0e20d9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
+<<<<<<< Updated upstream
   defaultReferences: []
+=======
+  defaultReferences:
+  - POI: {fileID: 9103793544196139397, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
+>>>>>>> Stashed changes
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

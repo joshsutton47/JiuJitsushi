@@ -20,8 +20,13 @@ public class HarpoonManager : MonoBehaviour
     [Header("Movement")]
     public float speed = 10;
 
+<<<<<<< Updated upstream
     //private Vector3 boatLocation;
     //public float easing = 0.05f;
+=======
+    [Header("Camera Settings")]
+    private FollowCamera cam;
+>>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
@@ -52,5 +57,20 @@ public class HarpoonManager : MonoBehaviour
         }*/
     }
 
+<<<<<<< Updated upstream
     
+=======
+    private void OnEnable()
+    {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCamera>();
+        cam.POI = this.gameObject;
+
+    }
+
+    private void OnDestroy()
+    {
+        cam.POI = GameObject.FindGameObjectWithTag("Boat");
+    }
+
+>>>>>>> Stashed changes
 }

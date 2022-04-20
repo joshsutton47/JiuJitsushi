@@ -16,7 +16,11 @@ public class FollowCamera : MonoBehaviour
 {
     #region Variables
     /// Variables ///
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     [Header("Set in Inspector")]
     public GameObject POI;
     public float easing = 0.05f;

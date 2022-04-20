@@ -369,8 +369,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff12e60793f4254a9e0ab112c0e20d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   POI: {fileID: 2006954201}
   easing: 0.1
+=======
+  POI: {fileID: 736640362}
+  easing: 0.05
+  camZ: 0
+--- !u!1 &736640362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9103793544196139397, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
+  m_PrefabInstance: {fileID: 1330491307}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &736640363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736640362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff12e60793f4254a9e0ab112c0e20d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  POI: {fileID: 9103793544196139397, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
+  easing: 0.05
+>>>>>>> Stashed changes
   camZ: 0
 --- !u!1001 &1028194978
 PrefabInstance:
@@ -443,7 +468,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 858787271, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9103793544196139396, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
       propertyPath: m_Enabled
