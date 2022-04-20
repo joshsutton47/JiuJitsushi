@@ -25,6 +25,8 @@ public class HarpoonManager : MonoBehaviour
     private float moveCommit;                       //increases to a maximum of 1 depending on how long it's been moving in one direction;
     [SerializeField] private float rotationMult;    //how far the harpoon will multiply
 
+    [Header("Camera Settings")]
+    private FollowCamera cam;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +47,8 @@ public class HarpoonManager : MonoBehaviour
 
         //chagne move commit
         float moveCommitChange = 0;
-        if (xAxis == 0){                                              //goes back to 0 or changes based on direction
+        if (xAxis == 0)
+        {                                              //goes back to 0 or changes based on direction
             if (Mathf.Abs(moveCommit) < 0.1) moveCommit = 0;
             else
             {
@@ -53,7 +56,8 @@ public class HarpoonManager : MonoBehaviour
                 moveCommit += moveCommitChange;
             }
         }
-        else {
+        else
+        {
             moveCommitChange = xAxis * accel * Time.deltaTime;
             float moveComAbs = Mathf.Abs(moveCommit);               //absolute value of move commit
             if (!(Mathf.Abs(moveCommit + moveCommitChange) > 1)) moveCommit += moveCommitChange;   //change move commit if not already at +/- 1
@@ -82,5 +86,16 @@ public class HarpoonManager : MonoBehaviour
         }
         Debug.Log(currentSpeed);
 
+    }
+    private void OnEnable()
+    {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCamera>();
+        cam.POI = this.gameObject;
+
+    }
+
+    private void OnDestroy()
+    {
+        cam.POI = GameObject.FindGameObjectWithTag("Boat");
     }
 }
