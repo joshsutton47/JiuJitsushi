@@ -20,6 +20,6 @@ public class TempScript : MonoBehaviour
             Vector3 newTrans = new Vector3(this.transform.position.x, harpoon.transform.position.y, this.transform.position.z);
             this.transform.position = newTrans;
         }
-        Debug.Log(harpoon.GetComponent<Rigidbody>().velocity);
+        //Debug.Log(harpoon.GetComponent<Rigidbody>().velocity);
     }
 }

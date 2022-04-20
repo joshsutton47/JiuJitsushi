@@ -43,7 +43,6 @@ public class BoatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //player input
         float xAxis = Input.GetAxis("Horizontal");
 
