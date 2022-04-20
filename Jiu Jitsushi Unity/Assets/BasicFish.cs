@@ -2,8 +2,8 @@
 * Created by: Sage
 * Date Created: April 13, 2022
 * 
-* Last Edited by: Sag
-* Last Edited: April 13, 2022
+* Last Edited by: Sage
+* Last Edited: April 18, 2022
 * 
 * Description: Controls fish basic movement
 ****/
@@ -14,37 +14,23 @@ using UnityEngine;
 
 public class BasicFish : MonoBehaviour
 {
-    public float maxSpeed = 1f;
-    public float speed = 1f;
+    public float maxSpeed = 4f;
+    private float speed;
     public float leftAndrightEdge = 10f;
     public float chanceToChangeDirections = 0.01f;
     private bool turningRight = false;
     private bool turningLeft = false;
 
-    private void Start()
+   void Start()
     {
-    
+        speed = maxspeed;
     }
-    // Update is called once per frame
-    /*void Update()
-    {
-        if(turning == true)
-        {
-
-            return;
-        }
-        //Fish moves every frame
-        
-        if (pos.x < -leftAndrightEdge || pos.x > leftAndrightEdge)
-        {
-            Invoke("ChangeDirection", 0f);
-        }
-
-    }//end Update()*/
-
     private void FixedUpdate()
     {
+<<<<<<< Updated upstream:Jiu Jitsushi Unity/Assets/BasicFish.cs
         if (Random.value < chanceToChangeDirections)
+=======
+>>>>>>> Stashed changes:Jiu Jitsushi Unity/Assets/Scripts/BasicFish.cs
         if(turningLeft == true)
         {
             speed -= .01f * maxSpeed;
