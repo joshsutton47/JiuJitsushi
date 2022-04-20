@@ -15,7 +15,7 @@ using UnityEngine;
 public class BasicFish : MonoBehaviour
 {
     public float maxSpeed = 1f;
-    public float speed = 1f;
+    private float speed;
     public float leftAndrightEdge = 10f;
     public float chanceToChangeDirections = 0.01f;
     private bool turningRight = false;
@@ -23,29 +23,11 @@ public class BasicFish : MonoBehaviour
 
     private void Start()
     {
-    
+        speed = maxSpeed;
     }
-    // Update is called once per frame
-    /*void Update()
-    {
-        if(turning == true)
-        {
-
-            return;
-        }
-        //Fish moves every frame
-        
-        if (pos.x < -leftAndrightEdge || pos.x > leftAndrightEdge)
-        {
-            Invoke("ChangeDirection", 0f);
-        }
-
-    }//end Update()*/
 
     private void FixedUpdate()
     {
-
-        if (Random.value < chanceToChangeDirections)
         if(turningLeft == true)
         {
             speed -= .01f * maxSpeed;
