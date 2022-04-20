@@ -108,9 +108,9 @@ Rigidbody:
   m_GameObject: {fileID: 3487813884214249805}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.2
+  m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -146,6 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82979298e022bd84482a0ec5d9b30572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallSpeed: 10
+  fallChange: 8
+  fallAccel: 0.2
+  fallSnap: 0.1
   speed: 0.3
   accel: 5
   snapSpeed: 7

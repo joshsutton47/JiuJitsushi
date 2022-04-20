@@ -15,7 +15,11 @@ using UnityEngine;
 public class HarpoonManager : MonoBehaviour
 {
     [Header("Movement")]
-    public float speed = 10;
+    public float fallSpeed;                       //base speed the harpoon falls
+    public float fallChange;                      //amount the fallspeed will change with the w and s keys
+    public float fallAccel;                       //how fast the speed of the harpoon changes
+    public float fallSnap;                        //threshhold for the falling to snap to the correct speed
+    public float speed = 10;                     //turn speed
     public float accel = 1;                      //how quickly the harpoon will go to it's maximum move commit
     public float snapSpeed = 1;                   //how quickly the harpoon will return to 0
     private float moveCommit;                       //increases to a maximum of 1 depending on how long it's been moving in one direction;
@@ -33,8 +37,11 @@ public class HarpoonManager : MonoBehaviour
     {
         //player input
         int xAxis = 0;
+        int yAxis = 0;
         if (Input.GetKey(KeyCode.A)) xAxis -= 1;
         if (Input.GetKey(KeyCode.D)) xAxis += 1;
+        if (Input.GetKey(KeyCode.W)) yAxis -= 1;
+        if (Input.GetKey(KeyCode.S)) yAxis += 2;
 
         //chagne move commit
         float moveCommitChange = 0;
@@ -58,6 +65,22 @@ public class HarpoonManager : MonoBehaviour
         pos.x += speed * moveCommit;
         transform.position = pos;
         transform.rotation = Quaternion.Euler(0, 0, moveCommit * rotationMult);                      //rotates with movement
-        Debug.Log(xAxis);
+
+        //change fall speed
+        float speedGoal = -fallSpeed - (fallChange * yAxis);
+        float currentSpeed = this.GetComponent<Rigidbody>().velocity.y;
+        float speedChange = (Mathf.Abs(currentSpeed) - Mathf.Abs(speedGoal));
+        if (Mathf.Abs(speedChange) < fallSnap)
+        {
+            this.GetComponent<Rigidbody>().velocity = new Vector3(this.GetComponent<Rigidbody>().velocity.x, speedGoal, this.GetComponent<Rigidbody>().velocity.z);
+            Debug.Log("Boring");
+        }
+        else
+        {
+            this.GetComponent<Rigidbody>().velocity = new Vector3(this.GetComponent<Rigidbody>().velocity.x, currentSpeed + (speedChange * fallAccel), this.GetComponent<Rigidbody>().velocity.z);
+            Debug.Log("Gaming");
+        }
+        Debug.Log(currentSpeed);
+
     }
 }
