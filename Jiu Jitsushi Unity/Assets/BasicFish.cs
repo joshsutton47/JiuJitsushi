@@ -27,10 +27,6 @@ public class BasicFish : MonoBehaviour
     }
     private void FixedUpdate()
     {
-<<<<<<< Updated upstream:Jiu Jitsushi Unity/Assets/BasicFish.cs
-        if (Random.value < chanceToChangeDirections)
-=======
->>>>>>> Stashed changes:Jiu Jitsushi Unity/Assets/Scripts/BasicFish.cs
         if(turningLeft == true)
         {
             speed -= .01f * maxSpeed;
