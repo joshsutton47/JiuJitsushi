@@ -19,14 +19,13 @@ public class BoatManager : MonoBehaviour
     public float speed = 10;
 
     [Space(10)]
-
-    [Header("Set in Inspector")]
+    [Header("Projectile Settings")]
+    public GameObject projectilePrefab; //the game object of the projectile
+    public float projectileSpeed; //speed of the projectile
     public GameObject[] harpoonPrefabs;
     public GameObject harpoonPrefab;
-    private Vector3 initialVelocity;
 
     [Header("Set Dynamically")]
-    private bool mousePress = false;
     private Camera cam;
     public Transform firePoint; //moved from set in inspector
 
@@ -54,14 +53,8 @@ public class BoatManager : MonoBehaviour
         transform.position = pos;
 
         // detects whether the mouse is clicking
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            mousePress = true;
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            mousePress = false;
             boatShoot();
         }
 
@@ -98,15 +91,26 @@ public class BoatManager : MonoBehaviour
 
     private void boatShoot()
     {
+        GameObject harpoon = Instantiate(harpoonPrefab, firePoint.position, gameObject.transform.rotation);
 
+        if (harpoon != null)
+        {
+
+            harpoon.transform.position = transform.position;
+            Rigidbody rb = harpoon.GetComponent<Rigidbody>();
+            rb.velocity = Vector3.down * projectileSpeed;
+        }
+
+        /*** OLD BOAT CODE I WANT TO KEEP FOR COPY AND PASTE REASONS
         // Fires projectile, with additional force depending on the
         // distance of the mouse from the boat
-        firePoint = this.transform;
+        firePoint = transform;
         //GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint.position, gameObject.transform.rotation);
         GameObject harpoon = Instantiate(harpoonPrefab, firePoint.position, gameObject.transform.rotation);
 
         Rigidbody rb = harpoon.GetComponent<Rigidbody>();
         rb.AddForce(initialVelocity, ForceMode.Impulse);
+        ***/
     }
 
 }
