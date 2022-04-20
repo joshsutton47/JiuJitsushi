@@ -3,8 +3,8 @@
  * Date Created: April 13, 2022
  * 
  * 
- * Last Edited by: Jeremiah Underwood
- * Lasted Edited: April 18, 2022
+ * Last Edited by: Thomas Nguyen
+ * Lasted Edited: April 20, 2022
  * Description: Controls the cannon and the projectiles shot
  * 
 ****/
@@ -16,20 +16,20 @@ using UnityEngine;
 public class BoatManager : MonoBehaviour
 {
     [Header("Ship Movement")]
-    public float speed = 10;
+    public float boatSpeed = 10;
 
     [Space(10)]
-
-    [Header("Set in Inspector")]
+    [Header("Projectile Settings")]
+    //public float projectileSpeed; //speed of the projectile
     public GameObject[] harpoonPrefabs;
-    private Vector3 initialVelocity;
+    public GameObject harpoonPrefab;
 
     [Header("Set Dynamically")]
-    private bool mousePress = false;
     private Camera cam;
     public Transform firePoint; //moved from set in inspector
 
     [HideInInspector] public int harpoonType = 0; //index to be used for what harpoon is used. We should figure out a set up for this later.
+    public bool harpoonThrown = false;
 
 
     // Start is called before the first frame update
@@ -43,67 +43,41 @@ public class BoatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //player input
         float xAxis = Input.GetAxis("Horizontal");
 
         //Change the transform based on the axis
         Vector3 pos = transform.position;
-        pos.x += xAxis * speed * Time.deltaTime;
+        pos.x += xAxis * boatSpeed * Time.deltaTime;
         transform.position = pos;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            FireProjectile();
-        }
-
-    }
-
-    void FireProjectile()
-    {
-        /*
-        GameObject projGo = Instantiate<GameObject>(projectilePrefab);
-        //GameObject projGo = pool.GetObject();
-
-        if (projGo != null)
-        {
-            projGo.transform.position = transform.position;
-            Rigidbody rb = projGo.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.up * projectileSpeed;
-        }*/
-
-
         // detects whether the mouse is clicking
-        if (Input.GetMouseButtonDown(0))
+        if (!harpoonThrown && Input.GetKeyDown(KeyCode.Space))
         {
-            mousePress = true;
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            mousePress = false;
             boatShoot();
         }
 
-        // translates the mouse position to 2D and makes the cannon follow the x and y direction
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = cam.ScreenToWorldPoint(mousePosition);
-        Vector2 direction = new Vector2(mousePosition.x - transform.position.x,
-        mousePosition.y - transform.position.y);
-
-        initialVelocity = direction;
-        transform.up = direction;
-        
     }
 
     private void boatShoot()
     {
-        // Fires projectile, with additional force depending on the
-        // distance of the mouse from the cannon
-        firePoint = this.transform;
-        GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint.position, gameObject.transform.rotation);
+        harpoonThrown = true;
+        GameObject harpoon = Instantiate(harpoonPrefab, firePoint.position, Quaternion.identity);
 
-        Rigidbody rb = harpoon.GetComponent<Rigidbody>();
-        rb.AddForce(initialVelocity, ForceMode.Impulse);
+        if (harpoon != null)
+        {
+            //harpoon.transform.position = transform.position;
+            Rigidbody rb = harpoon.GetComponent<Rigidbody>();
+            //rb.velocity = Vector3.down * projectileSpeed;
+        }
+
+
+        //GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint.position, gameObject.transform.rotation);
+        //GameObject harpoon = Instantiate(harpoonPrefab, firePoint.position, gameObject.transform.rotation);
+
+        //Rigidbody rb = harpoon.GetComponent<Rigidbody>();
+        //rb.AddForce(initialVelocity, ForceMode.Impulse);
     }
 
 }
