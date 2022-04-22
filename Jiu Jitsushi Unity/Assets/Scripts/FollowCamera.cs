@@ -3,7 +3,7 @@
  * Date created: April 18, 2022
  * 
  * Last editted by: Josh Sutton
- * Last edited:  April 20, 2022
+ * Last edited:  April 21, 2022
  * 
  * Description: Controls the camera movement and object tracking
  ***/
@@ -23,6 +23,7 @@ public class FollowCamera : MonoBehaviour
 
     [Header("Set Dynamically")]
     public float camZ;
+    public float camX;
 
     #endregion
 
@@ -30,6 +31,7 @@ public class FollowCamera : MonoBehaviour
     void Start()
     {
         camZ = this.transform.position.z;
+        camX = this.transform.position.x;
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class FollowCamera : MonoBehaviour
         {
             destination = Vector3.zero;
             destination.z = camZ;
+            destination.x = camX;
             transform.position = destination;
         }
         else
@@ -52,6 +55,7 @@ public class FollowCamera : MonoBehaviour
 
         //Force destination.z to be camZ to keep the camera far enough away
         destination.z = camZ;
+        destination.x = camX;
         transform.position = destination;
 
     }
