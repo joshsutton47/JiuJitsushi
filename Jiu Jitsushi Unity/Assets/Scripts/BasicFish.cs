@@ -20,6 +20,7 @@ public class BasicFish : MonoBehaviour
     public float chanceToChangeDirections = 0.01f;
     private bool turningRight = false;
     private bool turningLeft = false;
+    public int score = 100;
 
     private void Start()
     {
