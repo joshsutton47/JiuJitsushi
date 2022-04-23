@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         CheckGameState();
 
         //Outpot game state
-        Debug.Log("Game State " + gameState);
+        //Debug.Log("Game State " + gameState);
 
     }//end Update
 

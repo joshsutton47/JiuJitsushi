@@ -3,9 +3,9 @@
  * Date Created: April 13, 2022
  * 
  * 
- * Last Edited by: Thomas Nguyen
- * Lasted Edited: April 20, 2022
- * Description: Controls the cannon and the projectiles shot
+ * Last Edited by: Jeremiah Underwood
+ * Lasted Edited: April 23, 2022
+ * Description: Controls the Boat movement and fires harpoons
  * 
 ****/
 
@@ -22,13 +22,12 @@ public class BoatManager : MonoBehaviour
     [Header("Projectile Settings")]
     //public float projectileSpeed; //speed of the projectile
     public GameObject[] harpoonPrefabs;
-    public GameObject harpoonPrefab;
 
     [Header("Set Dynamically")]
     private Camera cam;
     public Transform firePoint; //moved from set in inspector
+    [HideInInspector] public int harpoonType = 0;    //0 = basic, 1 = long (testing)
 
-    [HideInInspector] public int harpoonType = 0; //index to be used for what harpoon is used. We should figure out a set up for this later.
     public bool harpoonThrown = false;
 
 
@@ -63,7 +62,8 @@ public class BoatManager : MonoBehaviour
     private void boatShoot()
     {
         harpoonThrown = true;
-        GameObject harpoon = Instantiate(harpoonPrefab, firePoint.position, Quaternion.identity);
+        GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint.position, Quaternion.identity);
+        Debug.Log(harpoonType);
 
         if (harpoon != null)
         {
@@ -71,13 +71,6 @@ public class BoatManager : MonoBehaviour
             Rigidbody rb = harpoon.GetComponent<Rigidbody>();
             //rb.velocity = Vector3.down * projectileSpeed;
         }
-
-
-        //GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint.position, gameObject.transform.rotation);
-        //GameObject harpoon = Instantiate(harpoonPrefab, firePoint.position, gameObject.transform.rotation);
-
-        //Rigidbody rb = harpoon.GetComponent<Rigidbody>();
-        //rb.AddForce(initialVelocity, ForceMode.Impulse);
     }
 
 }

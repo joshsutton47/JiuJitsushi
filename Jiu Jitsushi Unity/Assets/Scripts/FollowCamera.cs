@@ -21,6 +21,9 @@ public class FollowCamera : MonoBehaviour
     public GameObject POI;
     public float easing = 0.05f;
 
+    public bool shiftCam;
+    public float shiftCamAmount;
+
     [Header("Set Dynamically")]
     public float camZ;
     public float camX;
@@ -48,6 +51,12 @@ public class FollowCamera : MonoBehaviour
         else
         {
             destination = POI.transform.position;
+
+            //experenmental shift cam stuff to see if the camera can give a little more time to see upcoming fish (only when a harpoon is active)
+            if (shiftCam && (POI.tag == "Harpoon"))
+            {
+                destination.y += shiftCamAmount;
+            }
         }
 
         //Interpolate from the current camera position toward destination
@@ -57,6 +66,5 @@ public class FollowCamera : MonoBehaviour
         destination.z = camZ;
         destination.x = camX;
         transform.position = destination;
-
     }
 }

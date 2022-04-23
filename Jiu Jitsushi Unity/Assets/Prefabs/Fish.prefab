@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1064824080219317315}
   - component: {fileID: 1064824080219317324}
   - component: {fileID: 1064824080219317325}
+  - component: {fileID: 7449891178890226882}
   m_Layer: 0
   m_Name: Fish
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +110,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0d87003639c4641a10a3d5e9880a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  maxSpeed: 1
   leftAndrightEdge: 8
   chanceToChangeDirections: 0.0001
+  score: 100
+--- !u!114 &7449891178890226882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064824080219317326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c0725c35fd2cc4ab28a96fec4ec678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harpoonPoint: {fileID: 0}
+  isStuck: 0
