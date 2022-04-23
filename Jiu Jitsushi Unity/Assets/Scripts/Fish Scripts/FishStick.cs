@@ -20,11 +20,11 @@ public class FishStick : MonoBehaviour
 
     void Update()
     {
-        if (isStuck)
+        if (isStuck)                                                       //only activate if need be
         {
-            this.transform.position = harpoonPoint.transform.position;
-            this.transform.rotation = harpoonPoint.transform.rotation;
-            this.transform.Rotate(0, 0, 90, Space.Self);
+            this.transform.position = harpoonPoint.transform.position;       //move to position
+            this.transform.rotation = harpoonPoint.transform.rotation;        //rotate
+            this.transform.Rotate(0, 0, 90, Space.Self);                     //rotate again so not sticking strait up
         }
     }
 }

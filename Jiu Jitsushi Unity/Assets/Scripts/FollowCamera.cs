@@ -21,6 +21,7 @@ public class FollowCamera : MonoBehaviour
     public GameObject POI;
     public float easing = 0.05f;
 
+    [Header("Experemental, feel free to toggle off for normal camera")]
     public bool shiftCam;
     public float shiftCamAmount;
 
