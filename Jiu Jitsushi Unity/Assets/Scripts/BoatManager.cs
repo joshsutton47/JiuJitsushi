@@ -17,6 +17,7 @@ public class BoatManager : MonoBehaviour
 {
     [Header("Ship Movement")]
     public float boatSpeed = 10;
+    
 
     [Space(10)]
     [Header("Projectile Settings")]
@@ -42,7 +43,9 @@ public class BoatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //commenting in case we need it, but I'm removing boat movement code cause it's redundant
+        //also because my harpoon spawning thing is kinda broken
+        /***
         //player input
         float xAxis = Input.GetAxis("Horizontal");
 
@@ -50,6 +53,8 @@ public class BoatManager : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x += xAxis * boatSpeed * Time.deltaTime;
         transform.position = pos;
+        ***/
+
 
         // detects whether the mouse is clicking
         if (!harpoonThrown && Input.GetKeyDown(KeyCode.Space))
@@ -62,7 +67,7 @@ public class BoatManager : MonoBehaviour
     private void boatShoot()
     {
         harpoonThrown = true;
-        GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint.position, Quaternion.identity);
+        GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], new Vector3(0f, -1f, 0f), Quaternion.identity);
         Debug.Log(harpoonType);
 
         if (harpoon != null)

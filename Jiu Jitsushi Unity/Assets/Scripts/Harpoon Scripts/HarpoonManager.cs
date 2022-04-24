@@ -24,6 +24,9 @@ public class HarpoonManager : MonoBehaviour
     public float snapSpeed = 1;                   //how quickly the harpoon will return to 0
     private float moveCommit;                       //increases to a maximum of 1 depending on how long it's been moving in one direction;
     [SerializeField] private float rotationMult;    //how far the harpoon will multiply
+    [SerializeField] private GameObject boat;
+    public bool harpoonThrown;
+
 
     [Header("Camera Settings")]
     private FollowCamera cam;
@@ -35,6 +38,21 @@ public class HarpoonManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    private void Update()
+    {
+        /*** while the harpoon isn't destroyed is a bad idea. This crashes unity
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            while (this.gameObject != null)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, boat.transform.position, fallSpeed * Time.deltaTime * fallSnap * fallAccel);
+                transform.up = boat.transform.position - transform.position;
+            }
+
+        }
+        ***/
+    }
+
     void FixedUpdate()
     {
         //player input
@@ -83,6 +101,8 @@ public class HarpoonManager : MonoBehaviour
             this.GetComponent<Rigidbody>().velocity = new Vector3(this.GetComponent<Rigidbody>().velocity.x, currentSpeed + (speedChange * fallAccel), this.GetComponent<Rigidbody>().velocity.z);
         }
         //Debug.Log(currentSpeed);
+
+
 
     }
     private void OnEnable()

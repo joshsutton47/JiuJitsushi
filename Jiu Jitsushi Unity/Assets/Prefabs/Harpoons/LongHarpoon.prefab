@@ -158,6 +158,8 @@ MonoBehaviour:
   accel: 5
   snapSpeed: 7
   rotationMult: 40
+  boat: {fileID: 2021239482190994002, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
+  harpoonThrown: 0
 --- !u!114 &421978980670626472
 MonoBehaviour:
   m_ObjectHideFlags: 0

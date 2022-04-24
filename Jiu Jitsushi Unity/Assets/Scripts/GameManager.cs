@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
     public string copyrightDate = "Copyright " + thisDay; //date cretaed
 
     [Header("GAME SETTINGS")]
+    public GameObject boat; // reference to the boat prefab
+    public Vector3 boatPos; // The place to put the boat
 
     [Tooltip("Will the high score be recoreded")]
     public bool recordHighScore = false; //is the High Score recorded
@@ -259,6 +261,8 @@ public class GameManager : MonoBehaviour
             gameLevelsCount++; //add to level count for next level
             loadLevel = gameLevelsCount - 1; //find the next level in the array
             SceneManager.LoadScene(gameLevels[loadLevel]); //load next level
+            boat = Instantiate<GameObject>(boat);
+            boat.transform.position = boatPos;
 
             SetGameState(GameState.Playing);//set the game state to playing
 
