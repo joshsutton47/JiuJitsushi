@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2006954203}
   - component: {fileID: 2006954204}
   - component: {fileID: 421978980670626472}
+  - component: {fileID: 8519467050702869035}
   m_Layer: 0
   m_Name: LongHarpoon
   m_TagString: Harpoon
@@ -175,7 +176,22 @@ MonoBehaviour:
   - {fileID: 4748681510612861023}
   - {fileID: 6673063899905331669}
   - {fileID: 9086402116151217466}
+  fishCaught: []
   maxSkewers: 3
+--- !u!114 &8519467050702869035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487813884214249805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36f5cae7da626204fbf6b17ba13cf721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reelSpeed: 0.5
+  source: {fileID: 0}
 --- !u!1 &4748681510612861023
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,15 +307,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bfe9a7f8755c1c54abddc9ea9c88e85c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.79
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bfe9a7f8755c1c54abddc9ea9c88e85c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bfe9a7f8755c1c54abddc9ea9c88e85c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.302272
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bfe9a7f8755c1c54abddc9ea9c88e85c, type: 3}
       propertyPath: m_LocalRotation.w

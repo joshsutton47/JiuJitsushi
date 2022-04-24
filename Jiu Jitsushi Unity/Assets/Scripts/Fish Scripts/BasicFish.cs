@@ -2,8 +2,8 @@
 * Created by: Sage
 * Date Created: April 13, 2022
 * 
-* Last Edited by: Sag
-* Last Edited: April 13, 2022
+* Last Edited by: Jeremiah Underwood
+* Last Edited: April 24, 2022
 * 
 * Description: Controls fish basic movement
 ****/
@@ -32,7 +32,13 @@ public class BasicFish : MonoBehaviour
         if(turningLeft == true)
         {
             speed -= .01f * maxSpeed;
-            if(speed <= -maxSpeed)
+            if (speed < 0)                                    //flip directions when ready, a bit jank of a solution but it will do for now
+            {
+                Vector3 newScale = transform.localScale;
+                newScale.y = -1;
+                transform.localScale = newScale;
+            }
+            if (speed <= -maxSpeed)
             {
                 speed = -maxSpeed;
                 turningLeft = false;
@@ -41,6 +47,12 @@ public class BasicFish : MonoBehaviour
         if (turningRight == true)
         {
             speed += .01f * maxSpeed;
+            if (speed > 0)                                         //see above
+            {
+                Vector3 newScale = transform.localScale;
+                newScale.y = 1;
+                transform.localScale = newScale;
+            }
             if (speed >= maxSpeed)
             {
                 speed = maxSpeed;

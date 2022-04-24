@@ -76,11 +76,13 @@ public class HarpoonManager : MonoBehaviour
         float speedChange = (Mathf.Abs(currentSpeed) - Mathf.Abs(speedGoal));
         if (Mathf.Abs(speedChange) < fallSnap)
         {
-            this.GetComponent<Rigidbody>().velocity = new Vector3(this.GetComponent<Rigidbody>().velocity.x, speedGoal, this.GetComponent<Rigidbody>().velocity.z);
+            //this.GetComponent<Rigidbody>().velocity = new Vector3(this.GetComponent<Rigidbody>().velocity.x, speedGoal, this.GetComponent<Rigidbody>().velocity.z);
+            this.GetComponent<Rigidbody>().velocity = new Vector3(0, speedGoal, 0);
         }
         else
         {
-            this.GetComponent<Rigidbody>().velocity = new Vector3(this.GetComponent<Rigidbody>().velocity.x, currentSpeed + (speedChange * fallAccel), this.GetComponent<Rigidbody>().velocity.z);
+            //this.GetComponent<Rigidbody>().velocity = new Vector3(this.GetComponent<Rigidbody>().velocity.x, currentSpeed + (speedChange * fallAccel), this.GetComponent<Rigidbody>().velocity.z);
+            this.GetComponent<Rigidbody>().velocity = new Vector3(0, currentSpeed + (speedChange * fallAccel), 0);
         }
         //Debug.Log(currentSpeed);
 

@@ -15,6 +15,7 @@ public class FishCatch : MonoBehaviour
 {
 
     public GameObject[] skewerArray;
+    public List<GameObject> fishCaught;
     private int skewers = 0;
     [SerializeField] private int maxSkewers;
 
@@ -29,6 +30,7 @@ public class FishCatch : MonoBehaviour
         {
             collision.gameObject.GetComponent<FishStick>().isStuck = true;
             collision.gameObject.GetComponent<FishStick>().harpoonPoint = skewerArray[skewers];
+            fishCaught.Add(collision.gameObject);
             collision.gameObject.GetComponent<CapsuleCollider>().enabled = false;
             skewers++; //iterate number of skewers
         }

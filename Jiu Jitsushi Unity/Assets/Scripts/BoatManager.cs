@@ -4,7 +4,7 @@
  * 
  * 
  * Last Edited by: Jeremiah Underwood
- * Lasted Edited: April 23, 2022
+ * Lasted Edited: April 24, 2022
  * Description: Controls the Boat movement and fires harpoons
  * 
 ****/
@@ -25,7 +25,7 @@ public class BoatManager : MonoBehaviour
 
     [Header("Set Dynamically")]
     private Camera cam;
-    public Transform firePoint; //moved from set in inspector
+    public Vector3 firePoint; //moved from set in inspector, also changed from a transform to just a vector to fix some bugs
     [HideInInspector] public int harpoonType = 0;    //0 = basic, 1 = long (testing)
 
     public bool harpoonThrown = false;
@@ -50,6 +50,8 @@ public class BoatManager : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x += xAxis * boatSpeed * Time.deltaTime;
         transform.position = pos;
+        firePoint = transform.position;
+        firePoint.z += 1;
 
         // detects whether the mouse is clicking
         if (!harpoonThrown && Input.GetKeyDown(KeyCode.Space))
@@ -61,16 +63,17 @@ public class BoatManager : MonoBehaviour
 
     private void boatShoot()
     {
-        harpoonThrown = true;
-        GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint.position, Quaternion.identity);
-        Debug.Log(harpoonType);
+        //harpoonThrown = true;                                                                                   //doing this will make this variable obsolete, but it will be left in as to not confuse
+        GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint, Quaternion.identity);
+        harpoon.GetComponent<ReelIn>().source = this;
 
-        if (harpoon != null)
+        /*if (harpoon != null)
         {
-            //harpoon.transform.position = transform.position;
+            harpoon.transform.position = transform.position;
             Rigidbody rb = harpoon.GetComponent<Rigidbody>();
-            //rb.velocity = Vector3.down * projectileSpeed;
-        }
+            rb.velocity = Vector3.down * projectileSpeed;
+        }*/
+        this.enabled = false;                                                   //different way of making sure multiple harpoons arent thrown that will also prevent boat from moving
     }
 
 }

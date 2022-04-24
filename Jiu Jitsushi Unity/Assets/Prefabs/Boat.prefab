@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 858787271}
   m_Layer: 0
   m_Name: Boat
-  m_TagString: Untagged
+  m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 9103793544196139397}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -110,11 +110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e467f50a5b582274eb0bf26a1b96375f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  projectilePrefab: {fileID: 0}
-  projectileSpeed: 0
-  harpoonPrefab: {fileID: 0}
-  firePoint: {fileID: 0}
+  boatSpeed: 10
+  harpoonPrefabs:
+  - {fileID: 3487813884214249805, guid: 6288241e769131c47848e3fe364a4b45, type: 3}
+  - {fileID: 3487813884214249805, guid: bb9824cfbd54e544197df3edc707d645, type: 3}
+  firePoint: {x: 0, y: 0, z: 0}
+  harpoonType: 0
+  harpoonThrown: 0
 --- !u!114 &858787271
 MonoBehaviour:
   m_ObjectHideFlags: 0

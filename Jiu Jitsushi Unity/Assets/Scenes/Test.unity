@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &326240665 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9103793544196139416, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-  m_PrefabInstance: {fileID: 1330491307}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &344096074
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +304,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1064824080219317313, guid: 3549c8949efd7e7478454163048390f9, type: 3}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064824080219317313, guid: 3549c8949efd7e7478454163048390f9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064824080219317313, guid: 3549c8949efd7e7478454163048390f9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064824080219317313, guid: 3549c8949efd7e7478454163048390f9, type: 3}
+      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1064824080219317313, guid: 3549c8949efd7e7478454163048390f9, type: 3}
@@ -357,36 +364,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3549c8949efd7e7478454163048390f9, type: 3}
---- !u!1 &592623438
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 592623439}
-  m_Layer: 0
-  m_Name: Harpoon Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &592623439
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592623438}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 326240665}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &625834820
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +423,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &660676050
 GameObject:
@@ -544,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff12e60793f4254a9e0ab112c0e20d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  POI: {fileID: 2122861626}
+  POI: {fileID: 0}
   easing: 0.05
   shiftCam: 1
   shiftCamAmount: -8
@@ -695,7 +672,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1064824080219317313, guid: 2bd40056402475d43ac68ed4a1934a0e, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1064824080219317313, guid: 2bd40056402475d43ac68ed4a1934a0e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -866,53 +843,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9103793544196139396, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-      propertyPath: firePoint
-      value: 
-      objectReference: {fileID: 592623439}
-    - target: {fileID: 9103793544196139396, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103793544196139396, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-      propertyPath: harpoonPrefab
-      value: 
-      objectReference: {fileID: 3487813884214249805, guid: 6288241e769131c47848e3fe364a4b45, type: 3}
-    - target: {fileID: 9103793544196139396, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 3487813884214249805, guid: 6288241e769131c47848e3fe364a4b45, type: 3}
-    - target: {fileID: 9103793544196139396, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-      propertyPath: harpoonPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103793544196139396, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-      propertyPath: harpoonPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 3487813884214249805, guid: 6288241e769131c47848e3fe364a4b45, type: 3}
-    - target: {fileID: 9103793544196139396, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-      propertyPath: harpoonPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 3487813884214249805, guid: bb9824cfbd54e544197df3edc707d645, type: 3}
     - target: {fileID: 9103793544196139397, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
       propertyPath: m_Name
       value: Boat
       objectReference: {fileID: 0}
-    - target: {fileID: 9103793544196139397, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-      propertyPath: m_TagString
-      value: Boat
-      objectReference: {fileID: 0}
     - target: {fileID: 9103793544196139416, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103793544196139416, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103793544196139416, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9103793544196139416, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1070,11 +1007,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ebd19a2a16a4654ea83f2e9286f7859, type: 3}
---- !u!1 &2122861626 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9103793544196139397, guid: 11cf52e4371c2ad4f81727c368271fc7, type: 3}
-  m_PrefabInstance: {fileID: 1330491307}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2254184225794704876
 PrefabInstance:
   m_ObjectHideFlags: 0
