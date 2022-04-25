@@ -24,7 +24,7 @@ public class LineLengthening : MonoBehaviour
     public void AddLength()      //adds line length
     {
 
-        if (GameManager.score > costs[purchases])                   //only lengthen line if player has enough money
+        if (GameManager.score >= costs[purchases])                   //only lengthen line if player has enough money
         {
             GameManager.GM.UpdateScore(-1 * costs[purchases]);          //pay
             GameManager.maxDepth -= lengthChanges[purchases];            //increase depth

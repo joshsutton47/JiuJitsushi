@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f5cae7da626204fbf6b17ba13cf721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reelSpeed: 0.5
+  reelSpeed: 0.8
   source: {fileID: 0}
 --- !u!1 &4748681510612861023
 GameObject:

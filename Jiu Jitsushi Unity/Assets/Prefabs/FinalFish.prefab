@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1064824080219317325}
   - component: {fileID: 7449891178890226882}
   - component: {fileID: 1377741859}
+  - component: {fileID: 2742949636707603690}
   m_Layer: 0
   m_Name: FinalFish
   m_TagString: Fish
@@ -112,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0d87003639c4641a10a3d5e9880a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1
   leftAndrightEdge: 8
   chanceToChangeDirections: 0.0001
   score: 100
@@ -146,6 +146,18 @@ MonoBehaviour:
   leftAndrightEdge: 10
   chanceToChangeDirections: 0.01
   score: 0
+--- !u!122 &2742949636707603690
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064824080219317326}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288871423
+  m_Size: 3
 --- !u!1001 &1225343484774217433
 PrefabInstance:
   m_ObjectHideFlags: 0

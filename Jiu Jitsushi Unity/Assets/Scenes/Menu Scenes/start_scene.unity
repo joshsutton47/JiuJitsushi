@@ -894,7 +894,7 @@ MonoBehaviour:
   startScene: start_scene
   gameOverScene: end_scene
   gameLevels:
-  - Test
+  - Level
   gameLevelsCount: 0
   TestGameManager: 1
   nextLevel: 0
