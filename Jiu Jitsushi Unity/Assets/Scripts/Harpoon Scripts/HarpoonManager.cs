@@ -90,7 +90,11 @@ public class HarpoonManager : MonoBehaviour
         //keep above max depth
 
         pos = transform.position;  //reuse pos keyword since previous use is over
-        if (pos.y < GameManager.maxDepth) pos.y = GameManager.maxDepth;
+        if (pos.y < GameManager.maxDepth)
+        {
+            pos.y = GameManager.maxDepth;
+            this.gameObject.GetComponent<ReelIn>().Invoke("StartReel", 2.0f);
+        }
         transform.position = pos;
 
 

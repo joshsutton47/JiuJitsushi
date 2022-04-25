@@ -18,6 +18,7 @@ public class ReelIn : MonoBehaviour
     private Vector3 spawnPos;
     public float reelSpeed;
     public BoatManager source;        //reference set when harpoon fired, to enable boat after return
+    private GameObject cam;
 
     // Update is called once per frame
     void Update()
@@ -40,12 +41,13 @@ public class ReelIn : MonoBehaviour
                     Destroy(item);
                 }
                 source.source.PlayOneShot(source.money, 1f);
+                cam.GetComponent<FollowCamera>().shiftCamAmount = -8;
                 Destroy(this.gameObject);
             }
         }
     }
 
-    void StartReel()
+    public void StartReel()
     {
         if (!isReeling) //set up the reeling in when space is pressed
         {
@@ -54,6 +56,8 @@ public class ReelIn : MonoBehaviour
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 1);
             this.GetComponent<CapsuleCollider>().enabled = false;
             this.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            cam = GameObject.Find("Main Camera");
+            cam.GetComponent<FollowCamera>().shiftCamAmount = 10;
         }
     }
 
