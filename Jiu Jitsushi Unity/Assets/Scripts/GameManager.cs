@@ -312,4 +312,14 @@ public class GameManager : MonoBehaviour
 
     }//end RunTest()
 
+    public void WinInvoke()
+    {
+        Invoke("Win", 2.5f);
+    }
+
+    void Win()
+    {
+        SceneManager.LoadScene("end_scene");
+    }
+
 }

@@ -30,6 +30,9 @@ public class BoatManager : MonoBehaviour
 
     public bool harpoonThrown = false;
 
+    public AudioSource source;
+    public AudioClip splash;
+    public AudioClip money;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +66,7 @@ public class BoatManager : MonoBehaviour
 
     private void boatShoot()
     {
+        source.PlayOneShot(splash, 1f);
         //harpoonThrown = true;                                                                                   //doing this will make this variable obsolete, but it will be left in as to not confuse
         GameObject harpoon = Instantiate(harpoonPrefabs[harpoonType], firePoint, Quaternion.identity);
         harpoon.GetComponent<ReelIn>().source = this;
