@@ -20,13 +20,17 @@ public class ReelIn : MonoBehaviour
     public BoatManager source;        //reference set when harpoon fired, to enable boat after return
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartReel();
         }
-        if (isReeling) {
+    }
+    private void FixedUpdate()
+    {
+        if (isReeling)
+        {
             transform.position = Vector3.MoveTowards(transform.position, spawnPos, reelSpeed);
             if ((this.transform.position - spawnPos).magnitude < 1)
             {

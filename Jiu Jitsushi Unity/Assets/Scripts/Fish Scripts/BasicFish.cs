@@ -15,7 +15,7 @@ using UnityEngine;
 public class BasicFish : MonoBehaviour
 {
     [Header("Fish Settings")]
-    public float maxSpeed = 1f;
+    private float maxSpeed;
     private float speed;
     public float leftAndrightEdge = 10f;
     public float chanceToChangeDirections = 0.01f;
@@ -26,6 +26,7 @@ public class BasicFish : MonoBehaviour
 
     private void Start()
     {
+        maxSpeed = Random.Range(1f, 5f);
         speed = maxSpeed;
     }
 
