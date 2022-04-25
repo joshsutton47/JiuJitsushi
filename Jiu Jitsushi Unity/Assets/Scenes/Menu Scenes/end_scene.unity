@@ -158,7 +158,7 @@ MonoBehaviour:
   copyrightDate: Copyright 2022
   recordHighScore: 0
   defaultHighScore: 1000
-  defaultEndMessage: Game Over
+  defaultEndMessage: Congratulations
   loseMessage: You Lose
   winMessage: You Win
   endMsg: 
@@ -1193,7 +1193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game Over
+  m_Text: Congratulations
 --- !u!222 &1603986572
 CanvasRenderer:
   m_ObjectHideFlags: 0
