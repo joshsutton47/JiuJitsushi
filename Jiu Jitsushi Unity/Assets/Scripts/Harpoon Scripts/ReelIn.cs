@@ -39,6 +39,7 @@ public class ReelIn : MonoBehaviour
                 {
                     Destroy(item);
                 }
+                source.source.PlayOneShot(source.money, 1f);
                 Destroy(this.gameObject);
             }
         }

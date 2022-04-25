@@ -78,6 +78,6 @@ public class FinalFish : MonoBehaviour
 
     public void OnDestroy()
     {
-        SceneManager.LoadScene("end_scene");         //ends game when this fish is caught
+        GameManager.GM.WinInvoke();     //ends game when this fish is caught
     }
 }

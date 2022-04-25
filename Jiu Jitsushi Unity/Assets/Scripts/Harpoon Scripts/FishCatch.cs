@@ -18,6 +18,8 @@ public class FishCatch : MonoBehaviour
     public List<GameObject> fishCaught;
     private int skewers = 0;
     [SerializeField] private int maxSkewers;
+    public AudioSource source;
+    public AudioClip fishHit;
 
     void Update()       //keeping to make sure collisions with fish don't happne after skewer is full, might do in collision function instead
     {
@@ -28,6 +30,7 @@ public class FishCatch : MonoBehaviour
     {
         if ((collision.gameObject.tag == "Fish") && (skewers < maxSkewers))           //only skewer if collided wiht a fish, and space is available
         {
+            source.PlayOneShot(fishHit, 1f);
             collision.gameObject.GetComponent<FishStick>().isStuck = true;
             collision.gameObject.GetComponent<FishStick>().harpoonPoint = skewerArray[skewers];
             fishCaught.Add(collision.gameObject);

@@ -30,6 +30,8 @@ public class BoundsCheck : MonoBehaviour
     public float camHeight; //gets the height of the camera
 
 
+
+
     /*** MEHTODS ***/
 
     //Awake is called when the game loads (before Start).  Awake only once during the lifetime of the script instance.
