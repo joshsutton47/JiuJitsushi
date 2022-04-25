@@ -77,6 +77,6 @@ public class BasicFish : MonoBehaviour
 
     public void OnDestroy()
     {
-        GameManager.GM.UpdateScore(score); //when fish is destroyed updates the score by 100
+        GameManager.GM.UpdateScore(score); //when fish is destroyed updates the score
     }
 }
