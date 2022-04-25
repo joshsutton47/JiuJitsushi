@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BasicFish">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAiAAAAQAgAAAAAAAAAAAAQAAAAIAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\BasicFish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoatManager">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAACAAAAAABAAABAAAAAAAAAAIAAAACAICAAA=</HashCode>
+      <FileName>Assets\Scripts\BoatManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HarpoonManager">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABFQAAAiAAAAAAAIAAAQAgAAAAAQAAABAAAAABGAA=</HashCode>
+      <FileName>Assets\Scripts\HarpoonManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoundsCheck">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABFAAAICAAAAAAABAAAIAQAAAQAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\BoundsCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FollowCamera">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAyCAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FollowCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
