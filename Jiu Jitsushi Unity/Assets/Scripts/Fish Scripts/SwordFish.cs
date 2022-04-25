@@ -77,8 +77,9 @@ public class SwordFish : MonoBehaviour
 
     public void OnDestroy()
     {
-        GameManager.GM.UpdateScore(score); //when fish is destroyed updates the score by 100
-        bm = GetComponent<BoatManager>();
+        GameManager.GM.UpdateScore(score); //when fish is destroyed updates the score by 100\
+        GameObject boat = GameObject.Find("Boat");
+        bm = boat.GetComponent<BoatManager>();
         bm.harpoonSwap();
 
     }

@@ -79,7 +79,7 @@ public class BoatManager : MonoBehaviour
     public void harpoonSwap()
     {
         harpoonType++;
-        GameObject harpoon = Instantiate<GameObject>(harpoonPrefabs[harpoonType]);
+        //GameObject harpoon = Instantiate<GameObject>(harpoonPrefabs[harpoonType]);
     }
 
 }

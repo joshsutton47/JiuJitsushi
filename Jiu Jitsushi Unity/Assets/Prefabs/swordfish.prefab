@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1064824080219317324}
   - component: {fileID: 1064824080219317325}
   - component: {fileID: 7449891178890226882}
+  - component: {fileID: 1516400669}
   m_Layer: 0
   m_Name: swordfish
   m_TagString: Fish
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064824080219317326}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be0d87003639c4641a10a3d5e9880a6a, type: 3}
   m_Name: 
@@ -129,6 +130,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harpoonPoint: {fileID: 0}
   isStuck: 0
+--- !u!114 &1516400669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064824080219317326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8738b6f3f1e9847a6c700d4e25818b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 1
+  leftAndrightEdge: 10
+  chanceToChangeDirections: 0.01
+  score: 100
 --- !u!1001 &5981664303151919762
 PrefabInstance:
   m_ObjectHideFlags: 0
