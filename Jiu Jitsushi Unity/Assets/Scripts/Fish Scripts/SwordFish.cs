@@ -1,18 +1,18 @@
 /****
-* Created by: Sage
-* Date Created: April 13, 2022
+* Created by: Thomas Nguyen
+* Date Created: April 24, 2022
 * 
 * Last Edited by: Thomas Nguyen
 * Last Edited: April 24, 2022
 * 
-* Description: Controls fish basic movement
+* Description: Controls fish basic movement and changes harpoon type
 ****/
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicFish : MonoBehaviour
+public class SwordFish : MonoBehaviour
 {
     [Header("Fish Settings")]
     public float maxSpeed = 1f;
@@ -23,6 +23,7 @@ public class BasicFish : MonoBehaviour
     private bool turningLeft = false;
     public int score = 100;
 
+    BoatManager bm;
 
     private void Start()
     {
@@ -31,7 +32,7 @@ public class BasicFish : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(turningLeft == true)
+        if (turningLeft == true)
         {
             speed -= .01f * maxSpeed;
             if (speed < 0)                                    //flip directions when ready, a bit jank of a solution but it will do for now
@@ -77,5 +78,8 @@ public class BasicFish : MonoBehaviour
     public void OnDestroy()
     {
         GameManager.GM.UpdateScore(score); //when fish is destroyed updates the score by 100
+        bm = GetComponent<BoatManager>();
+        bm.harpoonSwap();
+
     }
 }

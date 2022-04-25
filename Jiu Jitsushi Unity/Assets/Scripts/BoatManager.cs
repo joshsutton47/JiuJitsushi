@@ -3,7 +3,7 @@
  * Date Created: April 13, 2022
  * 
  * 
- * Last Edited by: Jeremiah Underwood
+ * Last Edited by: Thomas Nguyens
  * Lasted Edited: April 24, 2022
  * Description: Controls the Boat movement and fires harpoons
  * 
@@ -74,6 +74,12 @@ public class BoatManager : MonoBehaviour
             rb.velocity = Vector3.down * projectileSpeed;
         }*/
         this.enabled = false;                                                   //different way of making sure multiple harpoons arent thrown that will also prevent boat from moving
+    }
+
+    public void harpoonSwap()
+    {
+        harpoonType++;
+        GameObject harpoon = Instantiate<GameObject>(harpoonPrefabs[harpoonType]);
     }
 
 }
