@@ -2,8 +2,8 @@
  * Created by: Sage
  * Date Created: April 21, 2022
  * 
- * Last Edited by: Sage
- * Last Edited: April 23, 2022
+ * Last Edited by: Jeremiah Underwood
+ * Last Edited: April 25, 2022
  * 
  * Description: Basic GameManager
 ****/
@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour
     [Space(10)]
 
     static public int score;  //score value
+    static public float maxDepth = -90;  // To be accessed and edited by multiple funcitons. Controls the maximum depth of the harpoon;
+
     public int Score { get { return score; } set { score = value; } }//access to static variable score [get/set methods]
 
     [Space(10)]

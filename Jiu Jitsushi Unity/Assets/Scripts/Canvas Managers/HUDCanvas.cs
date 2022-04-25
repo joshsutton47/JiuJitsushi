@@ -53,7 +53,7 @@ public class HUDCanvas : MonoBehaviour
     void SetHUD()
     {
         //if texbox exsists update value
-        if (scoreTextbox) { scoreTextbox.text = "Score " + score; }
+        if (scoreTextbox) { scoreTextbox.text = "CASH: $" + score; }
         if (highScoreTextbox) { highScoreTextbox.text = "High Score " + highscore; }
 
     }//end SetHUD()

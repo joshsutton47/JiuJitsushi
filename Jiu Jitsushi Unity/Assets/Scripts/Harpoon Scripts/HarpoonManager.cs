@@ -86,6 +86,13 @@ public class HarpoonManager : MonoBehaviour
         }
         //Debug.Log(currentSpeed);
 
+        //keep above max depth
+
+        pos = transform.position;  //reuse pos keyword since previous use is over
+        if (pos.y < GameManager.maxDepth) pos.y = GameManager.maxDepth;
+        transform.position = pos;
+
+
     }
     private void OnEnable()
     {
