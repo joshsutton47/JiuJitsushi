@@ -3,7 +3,7 @@
  * Date Created: April 18, 2022
  * 
  * 
- * Last Edited by: Jeremiah Underwood
+ * Last Edited by: Josh Sutton
  * Lasted Edited: April 18, 2022
  * Description: Controls the cannon and the projectiles shot
  * 
@@ -11,6 +11,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HarpoonManager : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class HarpoonManager : MonoBehaviour
 
     [Header("Camera Settings")]
     private FollowCamera cam;
+
+    [Header("Notification Text")]
+    public GameObject notificationObject;
+    public Text notifText;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +50,7 @@ public class HarpoonManager : MonoBehaviour
         if (Input.GetKey(KeyCode.W)) yAxis -= 1;
         if (Input.GetKey(KeyCode.S)) yAxis += 2;
 
-        //chagne move commit
+        //change move commit
         float moveCommitChange = 0;
         if (xAxis == 0)
         {                                              //goes back to 0 or changes based on direction
@@ -93,21 +98,24 @@ public class HarpoonManager : MonoBehaviour
         if (pos.y < GameManager.maxDepth)
         {
             pos.y = GameManager.maxDepth;
-            this.gameObject.GetComponent<ReelIn>().Invoke("StartReel", 2.0f);
+            notificationObject.SetActive(true);
+            notifText.color = Color.white; //changes the line notification to be visible
+            this.gameObject.GetComponent<ReelIn>().Invoke("StartReel", 1.0f);
         }
         transform.position = pos;
-
-
     }
+
     private void OnEnable()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCamera>();
         cam.POI = this.gameObject;
-
+        notificationObject = GameObject.FindGameObjectWithTag("Notification");
+        notifText = notificationObject.GetComponent<Text>();
     }
 
     private void OnDestroy()
     {
         cam.POI = GameObject.FindGameObjectWithTag("Boat");
+        notifText.color = Color.clear; // makes the notification transparent when harpoon is destroyed
     }
 }
